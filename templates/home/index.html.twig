@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Accueil - Site de réservation de salle{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <h1>Bienvenue sur le site de réservation de salle</h1>
+
+        <p>Commencez dès maintenant à réserver votre salle pour vos événements !</p>
+
+        <a href="{{ path('app_reservation_new') }}" class="btn btn-primary">Réserver une salle</a>
+    </div>
+{% endblock %}
