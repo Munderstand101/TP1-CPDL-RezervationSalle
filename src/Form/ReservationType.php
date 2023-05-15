@@ -3,6 +3,9 @@
 namespace App\Form;
 
 use App\Entity\Reservation;
+use App\Entity\Salle;
+use App\Entity\User;
+use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
@@ -15,8 +18,16 @@ class ReservationType extends AbstractType
             ->add('starting_date')
             ->add('ending_date')
             ->add('description')
-            ->add('salle')
-            ->add('user')
+
+            ->add('salle', EntityType::class, [
+                'class' => Salle::class,
+                'choice_label' => 'name'
+            ])
+            ->add('user', EntityType::class, [
+                'class' => User::class,
+                'choice_label' => 'email'
+            ])
+
         ;
     }
 
