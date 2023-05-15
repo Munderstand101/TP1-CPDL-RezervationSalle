@@ -63,4 +63,22 @@ class SalleRepository extends ServiceEntityRepository
 //            ->getOneOrNullResult()
 //        ;
 //    }
+
+public function findSalleByName(string $query)
+{
+    $qb = $this->createQueryBuilder('salle');
+    $qb
+        ->where(
+            $qb->expr()->andX(
+                $qb->expr()->orX(
+                    $qb->expr()->like('salle.name', ':query'),
+                ),
+              
+            )
+        )
+        ->setParameter('query', '%' . $query . '%');
+    return $qb
+        ->getQuery()
+        ->getResult();
+}
 }

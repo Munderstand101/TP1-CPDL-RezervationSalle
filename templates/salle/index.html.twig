@@ -6,7 +6,7 @@
 {% block body %}
 
 	<h1>Salle index</h1>
-	<div class="container">
+{% include "search/_searchBar.html.twig" %}	<div class="container">
 		<div class="row">
 			{% for salle in salles %}
 				<div class="card">
