@@ -1,17 +1,16 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Register{% endblock %}
+{% block title %}Register
+{% endblock %}
 
 {% block body %}
-    <h1>Register</h1>
+	<h1>Register</h1>
 
-    {{ form_start(registrationForm) }}
-        {{ form_row(registrationForm.email) }}
-        {{ form_row(registrationForm.plainPassword, {
-            label: 'Password'
-        }) }}
-        {{ form_row(registrationForm.agreeTerms) }}
+	<label for="inputEmail">Email</label>
+	<input type="email" value="{{ field_value(registrationForm.email) }}" name="email" id="inputEmail" class="form-control" autocomplete="email" required autofocus>
+	<label for="inputPassword">Password</label>
+	<input type="password" value="{{ field_value(registrationForm.plainPassword) }}" name="password" id="inputPassword" class="form-control" autocomplete="current-password" required>
 
-        <button type="submit" class="btn">Register</button>
-    {{ form_end(registrationForm) }}
+
+	<button type="submit" class="btn btn-primary btn-lg">Register</button>
 {% endblock %}
