@@ -15,10 +15,10 @@ class Reservation
     private ?int $id = null;
 
     #[ORM\Column(type: Types::DATE_MUTABLE, nullable: true)]
-    private ?\DateTimeInterface $starting_date = null;
+    public ?\DateTimeInterface $starting_date = null;
 
     #[ORM\Column(type: Types::DATE_MUTABLE, nullable: true)]
-    private ?\DateTimeInterface $ending_date = null;
+    public ?\DateTimeInterface $ending_date = null;
 
     #[ORM\Column(type: Types::TEXT, nullable: true)]
     private ?string $description = null;

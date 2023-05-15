@@ -13,8 +13,8 @@
 					<div class="card-body">
 						<h5 class="card-title">{{salle.name}}</h5>
 						<img src="{{ asset('images/logo.png')}}" class="card-img-top" style="max-width: 150px;" alt=" ...">
-						<a href="{{ path('app_salle_show', {'id': salle.id}) }}" class="btn btn-primary">Show</a>
-						<a href="{{ path('app_salle_edit', {'id': salle.id}) }}" class="btn btn-primary">Edit</a>
+						<a class="btn btn-lg btn-primary" href="{{ path('app_salle_show', {'id': salle.id}) }}" class="btn btn-primary">Show</a>
+						<a class="btn btn-lg btn-primary" href="{{ path('app_salle_edit', {'id': salle.id}) }}" class="btn btn-primary">Edit</a>
 					</div>
 				</div>
 			{% else %}
@@ -25,5 +25,5 @@
 		</div>
 	</div>
 
-	<a href="{{ path('app_salle_new') }}">Create new</a>
+	<a class="btn btn-lg btn-primary" href="{{ path('app_salle_new') }}">Create new</a>
 {% endblock %}
