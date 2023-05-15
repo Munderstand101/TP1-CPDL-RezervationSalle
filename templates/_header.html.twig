@@ -18,7 +18,25 @@
             <li><a class="dropdown-item" href="{{ path('app_salle_index') }}">Tous les salles</a></li>
             <li><a class="dropdown-item" href="{{ path('app_salle_new') }}">Ajouter une salle</a></li>
           </ul>
-        </li>
+</li>
+<li>
+		  	{% if app.user %}
+			        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+           Compte
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="{{path('app_logout')}}">Me déconnecter</a></li>
+          </ul>
+			{% else %}
+				        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+           Compte
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="{{path('app_login')}}">Me connecter</a></li>
+            <li><a class="dropdown-item" href="{{path('app_register')}}">M'inscrire</a></li>
+          </ul>
+			{% endif %}
+			</li>
 		<li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
            Reservations
